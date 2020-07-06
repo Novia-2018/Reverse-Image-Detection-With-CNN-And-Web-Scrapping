@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LND</title>
+</head>
+<body>
+{% block content %}
+<h1>{{name1}}</h1>
+<h1>{{name2}}</h1>
+<h1>{{name3}}</h1>
+<h1>{{name4}}</h1>
+<h1>{{price1}}</h1>
+<h1>{{price2}}</h1>
+<h1>{{price3}}</h1>
+<h1>{{price4}}</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %}
+
+
+
+
+{% endblock %}
+<a href="https://www.flipkart.com{{link1}}">GET1</a>
+<a href="https://www.flipkart.com{{link2}}">GET2</a>
+<a href="https://www.flipkart.com{{link3}}">GET3</a>
+<a href="https://www.flipkart.com{{link4}}">GET4</a>
+<a href="{{link5}}">GET4</a>
+<a href="{{link6}}">GET4</a>
+<a href="{{link7}}">GET4</a>
+<a href="{{link8}}">GET4</a>
+</body>
+</html>

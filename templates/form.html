@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<style type="text/css">
+		body{
+			background-color: black; 
+		}
+		.color{
+			color: white;
+		}
+		.color1{
+			color: black;
+		}
+		body,html{
+         	height:100%;
+         }
+         .move{
+<!--         	padding-left: 450px-->
+         	padding-bottom:2px;
+         }
+		.thumbnail a>img, .thumbnail>img {s
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+	</style>
+</head>
+<body>
+ <div class="container" class="color">
+ 	<h1 align="center" class="text-center display-2" ><strong><font color="black">Form</font></strong></h1>
+ 	<br>
+ 	 <div class="jumbotron division header__3igq9n5NOQDb0BZuWlYoJL" align="center" id="special" style="background-color: white">
+	 
+           <p>&nbsp;</p>
+          </p>
+{% block content %}
+         <form method="post" enctype="multipart/form-data">
+   			 {% csrf_token %}
+   			<input type="file" name="myfile">
+    		 <div class="move"><button type="submit" class="btn btn-primary btn-sm">Upload</button></div>
+
+  		</form>
+
+  		{% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+ 	 {% endif %}
+{% endblock %}
+           
+          
+        
+         </div>
+  </div>
+ 		
+ </div>
+</body>
+</html>
